@@ -1,9 +1,10 @@
 package ru.mirea.lab1;
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class Lab1 {
+    Scanner scanner = new Scanner(System.in);
     public void task3() {
-        Scanner scanner = new Scanner(System.in);
         int[] myArray = new int[]{1, 2, 4, 5, 6, 3, 8};
         int sum = 0;
         for (int i = 0; i < 7; i++) {
@@ -16,10 +17,8 @@ public class Lab1 {
         scanner.close();
     }
     public void task4() {
-        Scanner scanner = new Scanner(System.in);
         System.out.print("Array size: ");
         int size = scanner.nextInt();
-
         int[] numbers = new int[size];
 
         System.out.println("Write elements:");
@@ -53,16 +52,26 @@ public class Lab1 {
         System.out.println("Elements Sum: " + sum);
         System.out.println("Min element: " + min);
         System.out.println("Max element: " + max);
-
         scanner.close();
     }
     public void task5(String[] args) {
-        for (int i = 0; i < args.length; i++) {
-            System.out.println("Аргумент " + (i + 1) + ": " + args[i]);
 
+        for (int i = 0; i < args.length; i++) {
+            System.out.println("Arguments " + (i + 1) + ": " + args[i]);
         }
     }
+    public void task6() {
+        DecimalFormat dF = new DecimalFormat( "#.####" ); //  класс для форматирования любого числа в Java
+        for (int i = 1; i <= 10; i++) {
+            double harmonicNumber = 1.0 / i;
+            System.out.println(dF.format(harmonicNumber));
+        }
+    }
+    public void task7() {
+
+    }
 }
+
 
 
 
