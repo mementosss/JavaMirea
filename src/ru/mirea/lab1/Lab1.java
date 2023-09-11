@@ -68,7 +68,15 @@ public class Lab1 {
         }
     }
     public void task7() {
-
+        int factorial = 1;
+        int num = scanner.nextInt();
+        if (num > 0) {
+            for (int i = 1; i <= num; i++) {
+                factorial *= i;
+            }
+            System.out.println(num + "! = " + factorial);
+        }
+        else System.out.println("Number should be > 0");
     }
 }
 
