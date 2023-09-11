@@ -12,6 +12,7 @@ public class TestLab1 {
             case 1 -> tasks.task3();
             case 2 -> tasks.task4();
             case 3 -> tasks.task5(args);
+
         }
     }
 }
