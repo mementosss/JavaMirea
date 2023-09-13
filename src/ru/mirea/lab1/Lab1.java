@@ -1,9 +1,10 @@
 package ru.mirea.lab1;
 import java.util.Scanner;
 import java.text.DecimalFormat;
+import java.math.BigInteger;
 
 public class Lab1 {
-    Scanner scanner = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in); // для факториала время и кол-во цифр в числе 100 000 500 000/ BigInteger
     public void task3() {
         int[] myArray = new int[]{1, 2, 4, 5, 6, 3, 8};
         int sum = 0;
@@ -14,14 +15,13 @@ public class Lab1 {
         double ave = (double) sum / 7; //
         System.out.println("\nSum: " + sum);
         System.out.println("Average: " + ave);
-        scanner.close();
     }
     public void task4() {
         System.out.print("Array size: ");
         int size = scanner.nextInt();
         int[] numbers = new int[size];
 
-        System.out.println("Write elements:");
+        System.out.print("Write elements:");
         for (int i = 0; i < size; i++) {
             System.out.print("Element " + (i) + ": ");
             numbers[i] = scanner.nextInt();
@@ -55,7 +55,6 @@ public class Lab1 {
         scanner.close();
     }
     public void task5(String[] args) {
-
         for (int i = 0; i < args.length; i++) {
             System.out.println("Argument " + (i) + ": " + args[i]);
         }
@@ -68,15 +67,19 @@ public class Lab1 {
         }
     }
     public void task7() {
-        int factorial = 1;
         int num = scanner.nextInt();
-        if (num > 0) {
-            for (int i = 1; i <= num; i++) {
-                factorial *= i;
-            }
-            System.out.println(num + "! = " + factorial);
+        BigInteger factorial = BigInteger.ONE;
+        for (int i = 1; i <= num; i++) {
+            factorial = factorial.multiply(BigInteger.valueOf(i));
         }
-        else System.out.println("Number should be > 0");
+        System.out.println(num + "! = " + factorial);
+
+        int digitCount = countDigits(factorial);
+        System.out.println("Количество цифр: " + digitCount);
+    }
+    public int countDigits(BigInteger number) {
+        String numString = number.toString();
+        return numString.length();
     }
 }
 
