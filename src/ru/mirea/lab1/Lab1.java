@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 import java.math.BigInteger;
 
 public class Lab1 {
-    Scanner scanner = new Scanner(System.in); // для факториала время и кол-во цифр в числе 100 000 500 000/ BigInteger
+    Scanner scanner = new Scanner(System.in);
     public void task3() {
         int[] myArray = new int[]{1, 2, 4, 5, 6, 3, 8};
         int sum = 0;
@@ -66,7 +66,7 @@ public class Lab1 {
             System.out.println(dF.format(harmonicNumber));
         }
     }
-    public void task7() {
+    public void task7() { // для факториала (время и кол-во цифр в числах 100 000/500 000) / BigInteger
         int num = scanner.nextInt();
         BigInteger factorial = BigInteger.ONE;
         for (int i = 1; i <= num; i++) {
@@ -75,9 +75,9 @@ public class Lab1 {
         System.out.println(num + "! = " + factorial);
 
         int digitCount = countDigits(factorial);
-        System.out.println("Количество цифр: " + digitCount);
+        System.out.println("Numbers value: " + digitCount);
     }
-    public int countDigits(BigInteger number) {
+    public int countDigits(BigInteger number) { //подсчтёт цифр в числе
         String numString = number.toString();
         return numString.length();
     }
