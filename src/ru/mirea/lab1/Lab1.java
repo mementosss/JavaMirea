@@ -60,26 +60,25 @@ public class Lab1 {
         }
     }
     public void task6() {
-        DecimalFormat dF = new DecimalFormat( "#.####" ); //  класс для форматирования любого числа в Java
+        DecimalFormat dF = new DecimalFormat( "#.####" ); //класс для форматирования любого числа в Java
         for (int i = 1; i <= 10; i++) {
             double harmonicNumber = 1.0 / i;
             System.out.println(dF.format(harmonicNumber));
         }
     }
-    public void task7() { // для факториала (время и кол-во цифр в числах 100 000/500 000) / BigInteger
+    public void task7() {                       // для факториала (время и кол-во цифр в числах 100 000/500 000) / BigInteger
         int num = scanner.nextInt();
-        BigInteger factorial = BigInteger.ONE;
+        BigInteger factorial = BigInteger.ONE; // создает объект factorial типа BigInteger и присваивает ему значение 1
         for (int i = 1; i <= num; i++) {
-            factorial = factorial.multiply(BigInteger.valueOf(i));
+            factorial = factorial.multiply(BigInteger.valueOf(i)); // методом multiply умножаем значение factorial на текущее значение итерации
         }
         System.out.println(num + "! = " + factorial);
-
         int digitCount = countDigits(factorial);
-        System.out.println("Numbers value: " + digitCount);
+        System.out.println("Numbers of digit: " + digitCount);
     }
-    public int countDigits(BigInteger number) { //подсчтёт цифр в числе
-        String numString = number.toString();
-        return numString.length();
+    public int countDigits(BigInteger number) { //метод для подсчтёта цифр в факториале числа
+        String numString = number.toString();   //для преобразования объекта в его строковое представление
+        return numString.length();              //для подсчета количества символов в строке
     }
 }
 
