@@ -34,7 +34,8 @@ public class Author {
     public void setGender(char gender) {
         this.gender = gender;
     }
+
     public String toString() {
-        return "Author[name=" + name + ", email=" + email + ", gender=" + gender + "]";
+        return "object contains by default \n[name = " + name + ", email = " + email + ", gender = " + gender + "]";
     }
 }

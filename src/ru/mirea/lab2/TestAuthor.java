@@ -1,14 +1,12 @@
 package ru.mirea.lab2;
 
-import java.util.Scanner;
-
 public class TestAuthor {
     public static void main(String[] args) {
         Author author = new Author("James", "jjames@gmail.com", 'M');
-        System.out.println(author);
+        System.out.println(author + "\n");
 
-        author.setName("John");
-        author.setEmail("johnsmith@example.com"); // Изменение email автора
+        author.setName("Alice");
+        author.setEmail("alicesmith@example.com"); // Изменение email автора
         author.setGender('W');
 
         System.out.println("Name: " + author.getName());

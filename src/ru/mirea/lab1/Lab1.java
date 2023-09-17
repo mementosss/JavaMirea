@@ -5,6 +5,7 @@ import java.math.BigInteger;
 
 public class Lab1 {
     Scanner scanner = new Scanner(System.in);
+
     public void task3() {
         int[] myArray = new int[]{1, 2, 4, 5, 6, 3, 8};
         int sum = 0;
@@ -66,6 +67,7 @@ public class Lab1 {
             System.out.println(dF.format(harmonicNumber));
         }
     }
+
     public void task7() {                       // для факториала (время и кол-во цифр в числах 100 000/500 000) / BigInteger
         int num = scanner.nextInt();
         BigInteger factorial = BigInteger.ONE; // создает объект factorial типа BigInteger и присваивает ему значение 1
@@ -76,6 +78,7 @@ public class Lab1 {
         int digitCount = countDigits(factorial);
         System.out.println("Numbers of digit: " + digitCount);
     }
+
     public int countDigits(BigInteger number) { //метод для подсчтёта цифр в факториале числа
         String numString = number.toString();   //для преобразования объекта в его строковое представление
         return numString.length();              //для подсчета количества символов в строке
