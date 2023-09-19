@@ -11,7 +11,7 @@ public class HowMany {
         String input = scanner.nextLine(); // считывает ввод строки
         scanner.close();
         words = input.split("\\s+"); // регулярное выражения для замены двойных или более пробелов (правильный подсёт слов)
-        System.out.println(Arrays.toString(words)); // вывод содержимого массива
-        System.out.print("Words cout: " + words.length);
+        System.out.println(Arrays.toString(words)); // вывод содержимого массива, возвращает строкое представление одномерного массива, разделяя элементы запятой
+        System.out.print("Words cout: " + words.length); // считаем длинну массива, кол-во это элементов
     }
 }
