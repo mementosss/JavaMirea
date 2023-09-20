@@ -6,7 +6,8 @@ public class Double1 {
     public static void main(String[] args) {
         Double obj1 = Double.valueOf("211.22");
         String str = "16.66666666666666666666666666666";
-        double pStr = Double.parseDouble(str);
+
+        double pStr = Double.parseDouble(str); //возвращает новое значение double
         System.out.println(pStr);
 
         double pDouble = obj1;
