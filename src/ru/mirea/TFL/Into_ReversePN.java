@@ -6,9 +6,7 @@ import java.util.StringTokenizer;
 
 public class Into_ReversePN {
     public static String infixToRPN(String expression) {
-
         StringBuilder result = new StringBuilder();
-
         Stack<Character> operatorStack = new Stack<>();// Создаем стек для операторов
         // Используем StringTokenizer для разделения выражения на токены (числа и операторы)
         StringTokenizer tokenizer = new StringTokenizer(expression, "()+-*/^", true);
