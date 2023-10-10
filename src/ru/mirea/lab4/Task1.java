@@ -1,16 +1,15 @@
 package ru.mirea.lab4;
 
 public class Task1 {
-    interface DescriptionConvertible  {
-        String getDescription();
-    }
 
-    public String getDescription() {
-        return "Холодное время года";
-    }
-    public enum Seasons implements DescriptionConvertible {
+    public enum Seasons {
         SPRING("Весна",15),
-        SUMMER("Лето",30),
+        SUMMER("Лето",30) {
+            @Override
+            public String getDescription() {
+                return "Теплое время года";
+            }
+        },
         AUTUMN("Осень",10),
         WINTER("Зима",-12);
 
@@ -21,19 +20,14 @@ public class Task1 {
             this.temp = temp;
             this.name = name;
         }
+        public String getDescription() {
+            return "Холодное время года";
+        }
         public void printSeasonInfo() {
             System.out.println("Название времени года: " + name);
             System.out.println("Средняя температура: " + temp);
             System.out.println("Описание: " + getDescription());
             System.out.print("\n");
-        }
-        @Override
-        public String getDescription() {
-            if (this == SUMMER) {
-                return "Теплое время года";
-            } else {
-                return "Холодное время года";
-            }
         }
         public static void favoriteSeason(Seasons seasons) {
             switch (seasons) {
@@ -48,7 +42,6 @@ public class Task1 {
             Seasons.favoriteSeason(SUMMER);
             for (Seasons season : Seasons.values()) {
                 season.printSeasonInfo();
-
             }
         }
     }

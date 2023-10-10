@@ -30,8 +30,6 @@ public class Into_ReversePN {
                     operatorStack.pop();
                 }
             } else {
-            // Если токен - оператор, выталкиваем операторы из стека в результат, пока
-            // не встретим оператор с меньшим приоритетом или открывающую скобку
                 while (!operatorStack.isEmpty() && precedence(firstChar) <= precedence(operatorStack.peek())) { // пока стэк операторов не пуст и пока не встречаем оператор с большим приоритетом
                     result.append(operatorStack.pop()).append(" "); //добавить извлеченный оператор из стека и добавить его в сторку
                 }
