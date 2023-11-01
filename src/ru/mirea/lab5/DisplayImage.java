@@ -5,15 +5,18 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class DisplayImage extends JFrame {
+    private static final Logger LOGGER = Logger.getLogger(DisplayImage.class.getName());
     private BufferedImage image;
 
     public DisplayImage(String imagePath) {
         try {
             this.image = ImageIO.read(new File(imagePath));
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "Ошибка загрузки изображения", e);
         }
 
         setTitle("Image demonstration");
@@ -22,9 +25,6 @@ public class DisplayImage extends JFrame {
 
         JLabel label = new JLabel(new ImageIcon(image));
         add(label);
-
-        pack();
-        setLocationRelativeTo(null);
     }
 
     public static void main(String[] args) {
@@ -32,9 +32,6 @@ public class DisplayImage extends JFrame {
             System.out.println("Error");
             System.exit(1);
         }
-
-        SwingUtilities.invokeLater(() -> {
-            new DisplayImage(args[0]).setVisible(true);
-        });
+        new DisplayImage(args[0]).setVisible(true);
     }
 }

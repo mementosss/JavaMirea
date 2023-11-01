@@ -6,10 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AnimatedImage extends JPanel implements ActionListener {
-    private Timer timer;
     private int frameIndex;
-    private ImageIcon[] frames;
-    private int frameDelay = 500;
+    private final ImageIcon[] frames;
 
     public AnimatedImage(String[] framePaths) {
         frames = new ImageIcon[framePaths.length];
@@ -19,7 +17,8 @@ public class AnimatedImage extends JPanel implements ActionListener {
 
         frameIndex = 0;
 
-        timer = new Timer(frameDelay, this);
+        int frameDelay = 500;
+        Timer timer = new Timer(frameDelay, this);
         timer.start();
     }
 
