@@ -1,4 +1,4 @@
-package ru.mirea.lab5;
+package ru.mirea.lab5.task3;
 
 import javax.swing.*;
 import java.awt.*;

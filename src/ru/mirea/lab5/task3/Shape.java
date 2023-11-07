@@ -1,11 +1,11 @@
-package ru.mirea.lab5;
+package ru.mirea.lab5.task3;
 
 import java.awt.*;
 
 abstract class Shape {
-    private Color color;
-    private int x;
-    private int y;
+    private final Color color;
+    private final int x;
+    private final int y;
 
     public Shape(Color color, int x, int y) {
         this.color = color;
@@ -29,7 +29,7 @@ abstract class Shape {
 }
 
 class Circle extends Shape {
-    private int radius;
+    private final int radius;
 
     public Circle(Color color, int x, int y, int radius) {
         super(color, x, y);
@@ -44,7 +44,7 @@ class Circle extends Shape {
 }
 
 class Square extends Shape {
-    private int side;
+    private final int side;
 
     public Square(Color color, int x, int y, int side) {
         super(color, x, y);

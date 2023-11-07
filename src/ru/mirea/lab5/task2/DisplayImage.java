@@ -1,10 +1,10 @@
-package ru.mirea.lab5;
+package ru.mirea.lab5.task2;
 
 import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import javax.imageio.ImageIO;
+import javax.imageio.ImageIO; //ImageIO предоставляет методы для чтения и записи изображений
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -24,7 +24,7 @@ public class DisplayImage extends JFrame {
         setSize(image.getWidth(), image.getHeight());
 
         JLabel label = new JLabel(new ImageIcon(image));
-        add(label);
+        add(label); //используем метку для отображения загруженного изображения
     }
 
     public static void main(String[] args) {
